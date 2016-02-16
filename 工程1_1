@@ -1,0 +1,20 @@
+void CMy1_1View::OnDraw(CDC*pDC)
+{
+CMy1_1Doc*pDoc=GetDocument();
+ASSERT_VALID(pDoc);
+CBrush mybrush1;
+mybrush1 CreateSolidBrush(RGB(255,255,255));
+CRect myrect1(0,0,1024,768);
+pDC->FillRect(myrect1,&mybrush1);
+if (ituxing==1)
+pDC->Rectangle(20,20,89,89);
+else if (ituxing==2)
+pDC->Ellipse(20,20,89,89);
+else
+{
+pDC->MoveTo(20,20);
+pDC->LineTo(89,45);
+pDC->LineTo(20,89);
+pDC->LineTo(20,20);
+}
+}
